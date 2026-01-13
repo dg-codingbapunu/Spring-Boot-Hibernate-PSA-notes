@@ -84,16 +84,29 @@ Note: Since Spring boot is stand alone application, we package the application a
 What is Spring MVC?
 ##########################
 -> Spring MVC stands for Spring Model-View-Controller.
-—> It's a web framework in the Spring used to build web applications using the MVC design pattern.
+—> It is a web framework of the Spring  used to build web and RESTful applications by following the MVC design pattern.
+
+🔹 What does MVC mean?
+
+Model
+Holds business data and logic (POJOs, services, entities)
+
+View
+Displays data to the user
+(JSP, Thymeleaf, HTML, JSON in REST)
+
+Controller
+Handles incoming HTTP requests and coordinates between Model and View
 
 How Spring MVC Works:
 --------------------------
 a. User sends a request (/home) or from html form.
-b. DispatcherServlet (front controller) catches the request.
-c. Finds the matching controller method using annotations like @GetMapping.
-d. Executes logic and prepares data (Model).
+b. DispatcherServlet (front controller) catches the request. All requests first come here
+c. Finds the matching controller method using annotations like @GetMapping,@PostMapping.Then call Service layer
+d. Executes logic and prepares data (Model).Data is fetched or saved using Repository / DAO.
 c. Returns a view.
 
+Client → DispatcherServlet → Controller → Service → Model → Controller → DispatcherServlet → Client
 
 Spring Boot Annotations
 ---------------------------
@@ -111,7 +124,7 @@ c. It extracts values from the URL or form and passes them into your controller 
 
 3. What is @Service?
 
-a. @Service is a Spring stereotype annotation.
+a. @Service is a Spring stereotype(specific role or responsibility) annotation.
 b. It marks a class as a Service component in the Service Layer of your application.
 c. Spring will detect it during component scanning and create an instance (bean) of that class in the Spring IOC container
 d. It makes your class eligible for dependency injection.
@@ -123,10 +136,18 @@ a. @Component is a generic Spring annotation to mark a class as a Spring-managed
 b. When you annotate a class with @Component, Spring will detect it during component scanning and create an instance (bean) of that class in the Spring IOC container.
 c. It makes your class eligible for dependency injection.
 
-5. What is @Controller?
+✅ What is @Controller?
 
-a. @Controller is a Spring MVC stereotype annotation used to mark a class as a web controller.
-b. Acts as mediator layer in MVC Architecture 
+@Controller is a Spring MVC stereotype annotation used to mark a class as a web controller.
+It acts as the Controller (mediator) layer in the MVC architecture, handling HTTP requests and 
+coordinating between the Model and View.
+
+✅ What is @RestController?
+
+@RestController is a Spring MVC stereotype annotation used to create RESTful web services.
+It combines @Controller and @ResponseBody, so methods return data as (JSON/XML) directly instead of a view.
+@RestController both receives data from the client and sends data back to the client in JSON format.
+
 
 6. What is Model?
 
@@ -1773,6 +1794,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
