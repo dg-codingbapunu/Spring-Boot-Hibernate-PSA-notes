@@ -12,6 +12,29 @@ Spring Boot Stand-Alone Application:
 -> No need to install or configure any external server separately.
 
 
+why spring boot reoplace spring framework ?
+Spring Boot did NOT completely replace the Spring Framework.
+👉 Spring Boot is built on top of Spring Framework and simplifies it.
+
+Spring Boot was introduced to reduce the complexity of the Spring Framework by providing auto-configuration, embedded servers, starter dependencies, minimal XML configuration, opinionated defaults, production-ready features (Actuator), simplified dependency management, stand-alone JAR deployment, faster application development, and strong support for building microservices-friendly applications.
+
+
+
+A starter dependency in Spring Boot is a pre-configured collection of related dependencies that simplifies dependency management and automatically configures required components for a specific feature.
+
+🔹 Why Starter Dependencies are Used
+
+Avoids manual dependency selection
+
+Prevents version conflicts
+
+Reduces configuration effort
+
+Speeds up development
+
+Ensures compatibility between libraries
+
+
 
 Example:
 @SpringBootApplication
@@ -1722,6 +1745,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
