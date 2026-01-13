@@ -3,7 +3,7 @@ What is Spring boot
 ################################
 
 Spring Boot is an open-source Java-based framework used to create stand-alone applications quickly and easily with minimal configuration.
-
+Yes, java -jar myapp.jar is the command used to run a Spring Boot application packaged as an executable JAR.
 
 Spring Boot Stand-Alone Application:
 -------------------------------------------
@@ -12,13 +12,14 @@ Spring Boot Stand-Alone Application:
 -> No need to install or configure any external server separately.
 
 
-why spring boot reoplace spring framework ?
-Spring Boot did NOT completely replace the Spring Framework.
+why spring boot used over spring framework ?
+
 👉 Spring Boot is built on top of Spring Framework and simplifies it.
 
 Spring Boot was introduced to reduce the complexity of the Spring Framework by providing auto-configuration, embedded servers, starter dependencies, minimal XML configuration, opinionated defaults, production-ready features (Actuator), simplified dependency management, stand-alone JAR deployment, faster application development, and strong support for building microservices-friendly applications.
 
 
+Q. What is starter dependency?
 
 A starter dependency in Spring Boot is a pre-configured collection of related dependencies that simplifies dependency management and automatically configures required components for a specific feature.
 
@@ -26,13 +27,15 @@ A starter dependency in Spring Boot is a pre-configured collection of related de
 
 Avoids manual dependency selection
 
-Prevents version conflicts
+All libraries are tested to work together
+
+No version conflict
 
 Reduces configuration effort
 
 Speeds up development
 
-Ensures compatibility between libraries
+
 
 
 
@@ -43,6 +46,31 @@ public class MyApp {
         SpringApplication.run(MyApp.class, args);  // Starts embedded server
     }
 }
+
+
+@SpringBootApplication is a meta-annotation(combine multiple annotation) that marks the main class of a Spring Boot application and enables auto-configuration, component scanning, and configuration support.
+
+@SpringBootApplication combines of these 3 @SpringBootConfiguration, @EnableAutoConfiguration, and @ComponentScan to configure, scan, and auto-configure a Spring Boot application.
+
+✅ @SpringBootConfiguration
+
+Marks the class as a Spring configuration class and allows defining beans using @Bean.
+It is a specialized form of @Configuration used in Spring Boot for Java-based configuration.
+
+✅ @EnableAutoConfiguration
+
+Automatically configures Spring beans based on classpath dependencies and application properties.
+It reduces manual configuration by enabling Spring Boot’s auto-configuration mechanism.
+
+✅ @ComponentScan
+
+Scans the current package and its sub-packages to detect and register Spring components.
+It enables automatic detection of beans like @Component, @Service, and @Controller.
+
+
+
+
+
 
 When you run above program
 	a. Starts up the embedded server.
@@ -1745,6 +1773,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
