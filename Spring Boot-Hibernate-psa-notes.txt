@@ -159,7 +159,7 @@ d. Model in Spring is an interface, not a class
 7. What is ModelMap in Spring MVC?
 
 a. ModelMap is a special object provided by Spring MVC to pass data from your controller to the view layer (like JSP, Thymeleaf, etc.).
-b. It behaves like a Map (key-value pairs)
+in the form of key–value pairs.
 
 
 ######################################
@@ -1794,6 +1794,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
