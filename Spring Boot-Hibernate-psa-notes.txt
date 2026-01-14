@@ -106,7 +106,10 @@ a. User sends a request (/home) or from html form.
 b. DispatcherServlet (front controller) catches the request. All requests first come here
 c. Finds the matching controller method using annotations like @GetMapping,@PostMapping.Then call Service layer
 d. Executes logic and prepares data (Model).Data is fetched or saved using Repository / DAO.
-c. Returns a view.
+f. Service returns the processed data to the Controller.
+
+g. Controller adds the data to the Model and returns the View name to display the response to the user.
+
 
 Client → DispatcherServlet → Controller → Service → Model → Controller → DispatcherServlet → Client
 
@@ -1851,6 +1854,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
