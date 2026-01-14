@@ -161,6 +161,61 @@ d. Model in Spring is an interface, not a class
 a. ModelMap is a special object provided by Spring MVC to pass data from your controller to the view layer (like JSP, Thymeleaf, etc.).
 in the form of key–value pairs.
 
+What is DTO and Why We Create This?
+
+DTO (Data Transfer Object) is created to safely and efficiently transfer data between layers or between client and server without exposing internal entities.
+
+🔹 Reasons to Create DTO Layer (Point-wise)
+1️⃣ Avoid exposing Entity directly
+
+Entity may contain:
+
+Sensitive fields (password, internal IDs)
+
+JPA annotations
+
+DTO exposes only required data
+
+2️⃣ Better API design
+
+API response structure should be client-specific
+
+Entity structure may change
+
+DTO keeps API stable
+
+3️⃣ Security
+
+Prevents sending confidential data
+
+Example: hide password, audit fields
+
+4️⃣ Performance optimization
+
+Send only required fields
+
+Avoid heavy object graphs (lazy loading issues)
+
+5️⃣ Loose coupling
+
+Decouples persistence layer from API layer
+
+Entity changes do not affect API contract
+
+6️⃣ Validation
+
+Use validation annotations (@NotNull, @Email) on DTO
+
+Keeps entity clean
+
+7️⃣ Different views for different clients
+
+One entity → multiple DTOs
+
+Admin DTO
+
+User DTO
+
 
 ######################################
 Example - Create JSP page inside /src/webapp/WEB-INF/views/ and call that from controller layer 
@@ -1794,6 +1849,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
