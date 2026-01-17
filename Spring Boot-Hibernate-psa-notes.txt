@@ -292,6 +292,12 @@ Answer:
 -> It avoids writing try–catch blocks in every controller and provides centralized exception handling.
 
 
+✅ What is @PathVariable? (Interview-Ready)
+🔹 Definition (Simple & Clear)
+
+@PathVariable is a Spring MVC annotation used to extract values directly from the URL path and bind them to controller method parameters.
+
+
 ######################################
 Example - Create JSP page inside /src/webapp/WEB-INF/views/ and call that from controller layer 
 ###################################
@@ -1924,6 +1930,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
