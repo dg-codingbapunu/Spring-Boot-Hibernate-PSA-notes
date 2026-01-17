@@ -263,6 +263,28 @@ Integer / Number	@NotNull, @Min, @Max	Required and range validation
 
 
 
+✅ What is @Qualifier? (Interview-Ready)
+🔹 Definition (Simple & Clear)
+
+@Qualifier is a Spring annotation used to specify exactly which bean should be injected when multiple beans of the same type exist in the IoC container.
+
+🔹 Why @Qualifier is needed
+
+When more than one bean of the same interface/type is available, Spring gets confused and throws an error(Error: NoUniqueBeanDefinitionException).
+
+
+🔹 Definition (Clear & Simple)
+
+@Primary is a Spring annotation used to mark one bean as the default choice when multiple beans of the same type are available.
+
+🔹 Why @Primary is needed
+
+When more than one bean of the same type exists and no @Qualifier is specified, Spring does not know which bean to inject.
+👉 @Primary tells Spring “use this bean by default.”
+
+
+
+
 ######################################
 Example - Create JSP page inside /src/webapp/WEB-INF/views/ and call that from controller layer 
 ###################################
@@ -1895,6 +1917,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
