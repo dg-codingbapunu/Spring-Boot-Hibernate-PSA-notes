@@ -284,6 +284,13 @@ When more than one bean of the same type exists and no @Qualifier is specified, 
 
 
 
+1️⃣ What is @ControllerAdvice?
+
+Answer:
+
+-> @ControllerAdvice is a Spring annotation used to handle exceptions and common logic globally across all controllers.
+-> It avoids writing try–catch blocks in every controller and provides centralized exception handling.
+
 
 ######################################
 Example - Create JSP page inside /src/webapp/WEB-INF/views/ and call that from controller layer 
@@ -1917,6 +1924,7 @@ public Employee getRegistrationById(long id) {
 
 Step 5: Perform testing in postman
 url - http://localhost:8080/api/v1/employee/getReg?id=100
+
 
 
 
